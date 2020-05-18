@@ -64,10 +64,10 @@ image du schéma.
 * is_linked :
     * RDFS:domain => Bill_of_sale
     * RDFS:Range => Table
-* is_composed :
+* includes :
     * RDFS:domain => Bill_of_sale
     * RDFS:Range => Menu
-* is_composed :
+* includes :
     * RDFS:domain => Bill_of_sale
     * RDFS:Range => Dish
 * contains :
