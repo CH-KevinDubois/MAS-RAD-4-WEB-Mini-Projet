@@ -1,7 +1,8 @@
 # Rapport de travail
 ## RDFs : description du modèle
 ### Intro
-Le modèle pour l'exercice tente de décrire simplement les interactions et les actions entre les acteurs d'un réstaurant . Le modèle est volontairemenet simpliste et lacunaire afin de ne pas exagérement complexifier l'exercice. 
+Le modèle tente de décrire simplement les interactions et les actions entre les acteurs présents dans un restaurant. 
+Le modèle est volontairemenet simple afin de respecter les contraintes du mini-projet. Le restaurant possède des employés qui cusisinent et servent le client, le client choisi un plat proposé dans la carte du restaurant et peut le noter en fin de repas. 
 image du schéma. 
 ### Classes
 * Restaurant : Un restaurant avec un nom, un numéro de téléphone et une numéro de patente. Il tient un inventaire et a des employées.
@@ -20,9 +21,9 @@ image du schéma.
 * Produit : Un produit avec un nom, un prix et la quantité. Il fait partie d'un inventaire.
 * Inventory : Un inventraire avec un numéro de référence et la date du dernier inventaire.
 ### Object properties
-* holds :
+* offers :
     * RDFS:domain => Restaurant
-    * RDFS:Range => Inventory
+    * RDFS:Range => Dish
 * works_for :
     * RDFS:domain => Employee
     * RDFS:Range => Restaurant
@@ -32,34 +33,31 @@ image du schéma.
 * supervises :
     * RDFS:domain => Manager
     * RDFS:Range => Employee
-* edits :
+* has_edited :
     * RDFS:domain => Manager
     * RDFS:Range => Bill_of_sale
-* deletes :
+* has_deleted :
     * RDFS:domain => Manager
     * RDFS:Range => Reservation
 * looks_after :
     * RDFS:domain => Waiter
     * RDFS:Range => Table
-* emits :
+* has_emmited :
     * RDFS:domain => Waiter
     * RDFS:Range => Bill_of_sale
-* commands :
-    * RDFS:domain => Cook
-    * RDFS:Range => Product
 * perpares :
     * RDFS:domain => Cook
     * RDFS:Range => Dish
-* makes :
+* has_made :
     * RDFS:domain => Customer
     * RDFS:Range => Reservation
-* makes :
+* has_made :
     * RDFS:domain => Customer
     * RDFS:Range => Rank
-* ranks :
+* has_ranked :
     * RDFS:domain => Rank
     * RDFS:Range => Restaurant
-* ranks :
+* has_ranked :
     * RDFS:domain => Rank
     * RDFS:Range => Reservation
 * is_linked :
@@ -77,12 +75,6 @@ image du schéma.
 * contains :
     * RDFS:domain => Menu
     * RDFS:Range => Dish
-* constitutes :
-    * RDFS:domain => Product
-    * RDFS:Range => Dish
-* is_part_of :
-    * RDFS:domain => Product
-    * RDFS:Range => Inventory
 ### Inférence
-Comme nous avons des liens entre tous les acteurs d'un restaurant donné, une inférence possible est de mettre en relation la note du client avec l'équipe en charge de la table ainsi que le pourboire laissé avec la facture. Par inférence et selon la granulométrie du classement fait par le consommateur (comme notifié ci-dessus, pas développé dans le cadre de cet exercice), il serait possible d'évaluer la performance de l'ensemble des employés. On pourrait par inférence ajouter à l'employé une propriété est la moyenne des notes attribuées.
+Comme nous avons les liens entre tous les acteurs d'un restaurant, une inférence possible est de mettre en relation la note donnée par client, l'équipe en charge de la table, ainsi que le pourboire laissé avec la facture. Par inférence et selon une certaine pondéartion du classement fait par le client, il serait possible d'évaluer la performance de l'ensemble des employés. On pourrait par inférence ajouter à l'employé une propriété qui est la moyenne des notes reçues.
 ## RDF : instanciation du modèle
