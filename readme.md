@@ -22,10 +22,13 @@ image du schéma.
 * offers :
     * RDFS:domain => Restaurant
     * RDFS:Range => Dish
+* offers :
+    * RDFS:domain => Restaurant
+    * RDFS:Range => Menu
 * works_for :
     * RDFS:domain => Employee
     * RDFS:Range => Restaurant
-* takes :
+* has_taken :
     * RDFS:domain => Employee
     * RDFS:Range => Reservation
 * supervises :
@@ -40,7 +43,7 @@ image du schéma.
 * looks_after :
     * RDFS:domain => Waiter
     * RDFS:Range => Table
-* has_emmited :
+* has_emitted :
     * RDFS:domain => Waiter
     * RDFS:Range => Bill_of_sale
 * perpares :
@@ -59,11 +62,11 @@ image du schéma.
     * RDFS:domain => Rank
     * RDFS:Range => Reservation
 * is_linked :
-    * RDFS:domain => Reservation
-    * RDFS:Range => Table
+    * RDFS:domain => Table
+    * RDFS:Range => Reservation
 * is_linked :
     * RDFS:domain => Bill_of_sale
-    * RDFS:Range => Table
+    * RDFS:Range => Reservation
 * includes :
     * RDFS:domain => Bill_of_sale
     * RDFS:Range => Menu
@@ -74,5 +77,6 @@ image du schéma.
     * RDFS:domain => Menu
     * RDFS:Range => Dish
 ### Inférence
-Comme nous avons les liens entre tous les acteurs d'un restaurant, une inférence possible est de mettre en relation le classement donné par client, l'équipe en charge de la table, ainsi que le pourboire laissé avec la facture. Par inférence et selon une certaine pondéartion du classement et du pourboire, il serait possible d'évaluer la performance de l'ensemble des employés. Et par inférence ajouter à l'employé une propriété qui est la moyenne des notes reçues dans le passé.
+Une première idée est d'inférer la somme totale de la facture connaissant le prix ainsi que la quantité de menus et des plats commandés. 
+Une seconde idée, comme nous avons les liens entre tous les acteurs d'un restaurant, est de mettre en relation le classement donné par client, l'équipe en charge de la table, ainsi que le pourboire laissé avec la facture. Selon une certaine pondéartion du classement et du pourboire, il est possible d'évaluer la performance de l'ensemble des employés, et par inférence de leur ajouter une propriété qui est la moyenne des notes reçues dans le passé.
 ## RDF : instanciation du modèle
