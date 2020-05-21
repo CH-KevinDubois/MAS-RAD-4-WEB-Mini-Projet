@@ -51,10 +51,136 @@
         <Class IRI="#Waiter"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#contains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_edited"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_emitted"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_made"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_taken"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#includes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_linked"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#looks_after"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#offers"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#prepares"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#ranks"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#supervises"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#works_for"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://dbpedia.org/ontology#salary"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ambience"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#entry_date"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#food"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#number"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#number_of_seats"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#phone"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#price"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#staff"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#target_date"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tip"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bill1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bill2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dish1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dish2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dish3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Jean"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Jules"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Le_Cygne"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Marc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Menu1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Menu2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nicolas"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Philippe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rank1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rank2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Reservation1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Reservation2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Table1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Table2"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Cook"/>
@@ -68,21 +194,690 @@
         <Class IRI="#Waiter"/>
         <Class IRI="#Employee"/>
     </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Bill_of_sale"/>
+        <NamedIndividual IRI="#Bill1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dish"/>
+        <NamedIndividual IRI="#Dish1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dish"/>
+        <NamedIndividual IRI="#Dish2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dish"/>
+        <NamedIndividual IRI="#Dish3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Customer"/>
+        <NamedIndividual IRI="#Jean"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cook"/>
+        <NamedIndividual IRI="#Jules"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Restaurant"/>
+        <NamedIndividual IRI="#Le_Cygne"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Customer"/>
+        <NamedIndividual IRI="#Marc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Menu"/>
+        <NamedIndividual IRI="#Menu1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Menu"/>
+        <NamedIndividual IRI="#Menu2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Waiter"/>
+        <NamedIndividual IRI="#Nicolas"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Manager"/>
+        <NamedIndividual IRI="#Philippe"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rank"/>
+        <NamedIndividual IRI="#Rank1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rank"/>
+        <NamedIndividual IRI="#Rank2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Reservation"/>
+        <NamedIndividual IRI="#Reservation1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Reservation"/>
+        <NamedIndividual IRI="#Reservation2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Table"/>
+        <NamedIndividual IRI="#Table1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Table"/>
+        <NamedIndividual IRI="#Table2"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#includes"/>
+        <NamedIndividual IRI="#Bill1"/>
+        <NamedIndividual IRI="#Dish1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#includes"/>
+        <NamedIndividual IRI="#Bill1"/>
+        <NamedIndividual IRI="#Dish3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_linked"/>
+        <NamedIndividual IRI="#Bill1"/>
+        <NamedIndividual IRI="#Reservation1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#includes"/>
+        <NamedIndividual IRI="#Bill2"/>
+        <NamedIndividual IRI="#Dish2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#includes"/>
+        <NamedIndividual IRI="#Bill2"/>
+        <NamedIndividual IRI="#Menu2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_linked"/>
+        <NamedIndividual IRI="#Bill2"/>
+        <NamedIndividual IRI="#Reservation2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_made"/>
+        <NamedIndividual IRI="#Jean"/>
+        <NamedIndividual IRI="#Rank1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_made"/>
+        <NamedIndividual IRI="#Jean"/>
+        <NamedIndividual IRI="#Reservation1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_taken"/>
+        <NamedIndividual IRI="#Jules"/>
+        <NamedIndividual IRI="#Reservation1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#prepares"/>
+        <NamedIndividual IRI="#Jules"/>
+        <NamedIndividual IRI="#Dish1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#prepares"/>
+        <NamedIndividual IRI="#Jules"/>
+        <NamedIndividual IRI="#Dish2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#prepares"/>
+        <NamedIndividual IRI="#Jules"/>
+        <NamedIndividual IRI="#Dish3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offers"/>
+        <NamedIndividual IRI="#Le_Cygne"/>
+        <NamedIndividual IRI="#Dish1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offers"/>
+        <NamedIndividual IRI="#Le_Cygne"/>
+        <NamedIndividual IRI="#Dish2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offers"/>
+        <NamedIndividual IRI="#Le_Cygne"/>
+        <NamedIndividual IRI="#Dish3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offers"/>
+        <NamedIndividual IRI="#Le_Cygne"/>
+        <NamedIndividual IRI="#Menu1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offers"/>
+        <NamedIndividual IRI="#Le_Cygne"/>
+        <NamedIndividual IRI="#Menu2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_made"/>
+        <NamedIndividual IRI="#Marc"/>
+        <NamedIndividual IRI="#Rank2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_made"/>
+        <NamedIndividual IRI="#Marc"/>
+        <NamedIndividual IRI="#Reservation2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#contains"/>
+        <NamedIndividual IRI="#Menu1"/>
+        <NamedIndividual IRI="#Dish1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#contains"/>
+        <NamedIndividual IRI="#Menu1"/>
+        <NamedIndividual IRI="#Dish2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#contains"/>
+        <NamedIndividual IRI="#Menu2"/>
+        <NamedIndividual IRI="#Dish2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#contains"/>
+        <NamedIndividual IRI="#Menu2"/>
+        <NamedIndividual IRI="#Dish3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_emitted"/>
+        <NamedIndividual IRI="#Nicolas"/>
+        <NamedIndividual IRI="#Bill1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_emitted"/>
+        <NamedIndividual IRI="#Nicolas"/>
+        <NamedIndividual IRI="#Bill2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#looks_after"/>
+        <NamedIndividual IRI="#Nicolas"/>
+        <NamedIndividual IRI="#Table1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#looks_after"/>
+        <NamedIndividual IRI="#Nicolas"/>
+        <NamedIndividual IRI="#Table2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_edited"/>
+        <NamedIndividual IRI="#Philippe"/>
+        <NamedIndividual IRI="#Bill2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_edited"/>
+        <NamedIndividual IRI="#Philippe"/>
+        <NamedIndividual IRI="#Reservation2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#supervises"/>
+        <NamedIndividual IRI="#Philippe"/>
+        <NamedIndividual IRI="#Jules"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#supervises"/>
+        <NamedIndividual IRI="#Philippe"/>
+        <NamedIndividual IRI="#Nicolas"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ranks"/>
+        <NamedIndividual IRI="#Rank1"/>
+        <NamedIndividual IRI="#Reservation1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ranks"/>
+        <NamedIndividual IRI="#Rank2"/>
+        <NamedIndividual IRI="#Reservation2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_linked"/>
+        <NamedIndividual IRI="#Table1"/>
+        <NamedIndividual IRI="#Reservation1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_linked"/>
+        <NamedIndividual IRI="#Table2"/>
+        <NamedIndividual IRI="#Reservation2"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tip"/>
+        <NamedIndividual IRI="#Bill1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tip"/>
+        <NamedIndividual IRI="#Bill2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">75</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#Dish1"/>
+        <Literal>Dish1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#Dish1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">22</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#Dish2"/>
+        <Literal>Dish2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#Dish2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">18</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#Dish3"/>
+        <Literal>Dish3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#Dish3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">13</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#Jean"/>
+        <Literal>Jean</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#phone"/>
+        <NamedIndividual IRI="#Jean"/>
+        <Literal>+41 234 56 80</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dbpedia.org/ontology#salary"/>
+        <NamedIndividual IRI="#Jules"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">5000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#Jules"/>
+        <Literal>Jules</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#Le_Cygne"/>
+        <Literal>Le Cygne</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#phone"/>
+        <NamedIndividual IRI="#Le_Cygne"/>
+        <Literal>+41 234 56 78</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#Marc"/>
+        <Literal>Marc</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#phone"/>
+        <NamedIndividual IRI="#Marc"/>
+        <Literal>+41 234 56 78</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#Menu1"/>
+        <Literal>Menu1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#Menu1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">35</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#Menu2"/>
+        <Literal>Menu2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#Menu2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">20</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dbpedia.org/ontology#salary"/>
+        <NamedIndividual IRI="#Nicolas"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#Nicolas"/>
+        <Literal>Nicolas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dbpedia.org/ontology#salary"/>
+        <NamedIndividual IRI="#Philippe"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">5000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#name"/>
+        <NamedIndividual IRI="#Philippe"/>
+        <Literal>Philippe</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ambience"/>
+        <NamedIndividual IRI="#Rank1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#unsignedByte">9</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#food"/>
+        <NamedIndividual IRI="#Rank1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#unsignedByte">8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#staff"/>
+        <NamedIndividual IRI="#Rank1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#unsignedByte">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ambience"/>
+        <NamedIndividual IRI="#Rank2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#unsignedByte">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#food"/>
+        <NamedIndividual IRI="#Rank2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#unsignedByte">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#staff"/>
+        <NamedIndividual IRI="#Rank2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#unsignedByte">10</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entry_date"/>
+        <NamedIndividual IRI="#Reservation1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2020-26-01T10:10:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#target_date"/>
+        <NamedIndividual IRI="#Reservation1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2020-27-02T20:15:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entry_date"/>
+        <NamedIndividual IRI="#Reservation2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2020-26-01:09:09:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#target_date"/>
+        <NamedIndividual IRI="#Reservation2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2020-27-02T20:15:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#number"/>
+        <NamedIndividual IRI="#Table1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#unsignedByte">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#number_of_seats"/>
+        <NamedIndividual IRI="#Table1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#unsignedByte">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#number"/>
+        <NamedIndividual IRI="#Table2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#unsignedByte">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#number_of_seats"/>
+        <NamedIndividual IRI="#Table2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#unsignedByte">6</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_edited"/>
+        <ObjectProperty IRI="#has_emitted"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_edited"/>
+        <ObjectProperty IRI="#has_taken"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contains"/>
+        <Class IRI="#Menu"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_edited"/>
+        <Class IRI="#Manager"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_emitted"/>
+        <Class IRI="#Waiter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_made"/>
+        <Class IRI="#Customer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_taken"/>
+        <Class IRI="#Employee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#includes"/>
+        <Class IRI="#Bill_of_sale"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_linked"/>
+        <Class IRI="#Bill_of_sale"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_linked"/>
+        <Class IRI="#Table"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#looks_after"/>
+        <Class IRI="#Waiter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#offers"/>
+        <Class IRI="#Restaurant"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#prepares"/>
+        <Class IRI="#Cook"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#ranks"/>
         <Class IRI="#Rank"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#supervises"/>
+        <Class IRI="#Manager"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#works_for"/>
+        <Class IRI="#Employee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contains"/>
+        <Class IRI="#Dish"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_edited"/>
+        <Class IRI="#Bill_of_sale"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_edited"/>
+        <Class IRI="#Reservation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_emitted"/>
+        <Class IRI="#Bill_of_sale"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_made"/>
+        <Class IRI="#Rank"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_made"/>
+        <Class IRI="#Reservation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_taken"/>
+        <Class IRI="#Reservation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#includes"/>
+        <Class IRI="#Dish"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#includes"/>
+        <Class IRI="#Menu"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_linked"/>
+        <Class IRI="#Reservation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#looks_after"/>
+        <Class IRI="#Table"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#offers"/>
+        <Class IRI="#Dish"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#offers"/>
+        <Class IRI="#Menu"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#prepares"/>
+        <Class IRI="#Dish"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ranks"/>
+        <Class IRI="#Reservation"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#ranks"/>
         <Class IRI="#Restaurant"/>
     </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#supervises"/>
+        <Class IRI="#Employee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#works_for"/>
+        <Class IRI="#Restaurant"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://dbpedia.org/ontology#salary"/>
+        <Class IRI="#Employee"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ambience"/>
+        <Class IRI="#Rank"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#entry_date"/>
+        <Class IRI="#Reservation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#food"/>
+        <Class IRI="#Rank"/>
+    </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#name"/>
         <Class IRI="http://dbpedia.org/ontology/Person"/>
     </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#name"/>
+        <Class IRI="#Dish"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#name"/>
+        <Class IRI="#Menu"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#number"/>
+        <Class IRI="#Table"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#number_of_seats"/>
+        <Class IRI="#Table"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#phone"/>
+        <Class IRI="#Customer"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#phone"/>
+        <Class IRI="#Restaurant"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#price"/>
+        <Class IRI="#Dish"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#price"/>
+        <Class IRI="#Menu"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#staff"/>
+        <Class IRI="#Rank"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#target_date"/>
+        <Class IRI="#Reservation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tip"/>
+        <Class IRI="#Bill_of_sale"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://dbpedia.org/ontology#salary"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ambience"/>
+        <Datatype abbreviatedIRI="xsd:unsignedByte"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#entry_date"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#food"/>
+        <Datatype abbreviatedIRI="xsd:unsignedByte"/>
+    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#name"/>
         <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#number"/>
+        <Datatype abbreviatedIRI="xsd:unsignedByte"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#number_of_seats"/>
+        <Datatype abbreviatedIRI="xsd:unsignedByte"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#phone"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#price"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#staff"/>
+        <Datatype abbreviatedIRI="xsd:unsignedByte"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#target_date"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tip"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
     </DataPropertyRange>
 </Ontology>
 
