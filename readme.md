@@ -307,8 +307,8 @@ Comme la majorité des sites n'implémentent pas de RDFa (mais à ce que je vois
 ### Sources 
 > Cours SEO chapitre 2 Search Engine Optimisation : CAS-IPL - HRS
 ## Conclusion : en toute franchise
-Travail très intéressant, j'ai compris une partie (du moins je crois) du web des *choses* semantiquement liées (et pas des "objets" (vu comme entités physiques) comme semble le dépeindre la traduction française). Au début, j'ai trouvé très instructif de pouvoir mettre en pratique et de manière concrète la théorie vue en cours. 
+Sujet très intéressant, j'ai compris un peu (du moins je crois) du web des *choses* semantiquement liées (et pas des "objets" vu comme entités physiques comme semble le dépeindre la traduction française). Au début, j'ai trouvé très instructif de pouvoir mettre en pratique et de manière concrète la théorie vue en cours. 
     
-Au début ... car cela m'est devenu par la suite prèsque indigeste. Indigeste le fait de devoir répéter chaques itérations encore et encore. Je trouve cela dommage, car plutôt que de faire **1-2** fois les choses proprements et avec plaisir, j'ai fini par les faire **10** fois, de manière un peu baclée et avec le triste sentiment que plus j'avancais moins c'était intéressant. Comme je l'ai dit à certains de mes collègues, pour la répétition de tâches ennuyeuses, j'ai plus de 45 heures par semaine de travail "officiel" pour le pratiquer ... et c'est payé! 
+Au début ... car cela m'est devenu par la suite un peu indigeste. Indigeste le fait de devoir répéter chaques étapes de multiples fois. Je trouve cela dommage, car plutôt que de faire **1-2** fois les choses proprements et avec plaisir, j'ai fini par les faire **5-10** fois, à la longue de manière un peu baclée et avec le triste sentiment que plus j'avancais moins c'était intéressant. Pour la répétition de tâches ennuyeuses, j'ai plus de 45 heures par semaine de travail "officiel" pour la pratiquer ... et c'est payé! 
     
 Après plus de 30 heures passées sur ce travail (pour un petit 30% de la note), je crois que je peux sincérement dire que j'en ai assez.
