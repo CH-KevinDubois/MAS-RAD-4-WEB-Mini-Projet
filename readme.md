@@ -1,8 +1,8 @@
 # Rapport de travail
 ## RDFs : description du modèle
 ### Intro
-Le modèle tente de décrire simplement les interactions et les actions entre les acteurs présents dans un restaurant. 
-Le modèle est volontairemenet simple afin de respecter les contraintes du mini-projet. Le restaurant possède des employés qui cusisinent et servent le client, le client choisi un plat proposé dans la carte du restaurant et peut le noter en fin de repas. 
+Le modèle tente de décrire simplement les interactions, les actions et les acteurs présents dans un restaurant. 
+Le modèle est volontairement simplifié, mais pas trop afin de respecter les contraintes posées par les données mini-projet. Pour décire en deux mots le modèle : l'acteur principal est le restaurant qui possède des employés et qui est visité par des clients. Les employés servent les clients, émettent les factures, cuisinent les plats, ... . Alors que les clients choisissent des plats proposés dans la carte et peuvent donner des notes en fin de repas.  
 image du schéma. 
 ### Classes
 * Restaurant : Un restaurant avec un nom, un numéro de téléphone et une numéro de patente. Il tient un inventaire et a des employées.
@@ -76,7 +76,161 @@ image du schéma.
 * contains :
     * RDFS:domain => Menu
     * RDFS:Range => Dish
-### Inférence
+### Inférences
 Une première idée est d'inférer la somme totale de la facture connaissant le prix ainsi que la quantité de menus et des plats commandés. 
-Une seconde idée, comme nous avons les liens entre tous les acteurs d'un restaurant, est de mettre en relation le classement donné par client, l'équipe en charge de la table, ainsi que le pourboire laissé avec la facture. Selon une certaine pondéartion du classement et du pourboire, il est possible d'évaluer la performance de l'ensemble des employés, et par inférence de leur ajouter une propriété qui est la moyenne des notes reçues dans le passé.
+Une seconde idée, comme nous avons les liens entre tous les acteurs d'un restaurant, est de mettre en relation le classement donné par client, l'équipe en charge de la table, ainsi que le pourboire laissé avec la facture. Selon une certaine pondération du classement et du pourboire, il est possible d'évaluer la performance de l'ensemble des employés, et par inférence de leur ajouter une propriété qui est la moyenne des notes reçues dans le passé.
 ## RDF : instanciation du modèle
+Les graphs
+## Requêtes SPARQL
+1.  Requête : execQueryGetEmployees  
+    Description : trouver tous les employés.  
+    Utilité : trouver tous les employés.  
+    Constuction : Je recherche toutes les subclasses de Employee et ensuite toutes les instances des ces subclasses (fait comme ceci car pas de reasoner).  
+    Graph  
+    ```java
+    PREFIX db: <http://dbpedia.org/resource/>  
+	PREFIX onto: <http://dbpedia.org/ontology/>   
+	PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+	PREFIX ns: <http://www.semanticweb.org/Kevin/Mini-projet/Ressources/>
+	select distinct ?employee where { 
+		?x rdfs:subClassOf ns:Employee . 
+		?employee rdf:type ?x . 	
+	};
+    ```
+    Resulats attendus : 
+    ```java 
+    http://www.semanticweb.org/Kevin/Mini-projet/Ressources/jules
+    http://www.semanticweb.org/Kevin/Mini-projet/Ressources/nicolas
+    http://www.semanticweb.org/Kevin/Mini-projet/Ressources/philippe
+    ```
+
+2.  Requête : execQueryGetHigherDishPrice  
+    Description : Optenir les 2 prix les plus élevés des plats.  
+    Utilité :  Optenir les deux prix les plus élevés.  
+    Constuction : Je recherche les plats, les prix associés, j'ordonne de façon DESC et je limite à deux résultats.  
+    Graph  
+    ```java
+    PREFIX db: <http://dbpedia.org/resource/>  
+	PREFIX onto: <http://dbpedia.org/ontology/>   
+	PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+	PREFIX ns: <http://www.semanticweb.org/Kevin/Mini-projet/Ressources/>
+    "select distinct ?price where { 
+		?dish rdf:type ns:Dish . 
+		?dish ns:price ?price . 	
+	} 
+	ORDER BY DESC(?price) 
+	LIMIT 2	
+	};
+    ```
+    Resulats attendus : 
+    ```java 
+    "22.0"^^<http://www.w3.org/2001/XMLSchema#decimal>
+    "18.0"^^<http://www.w3.org/2001/XMLSchema#decimal>
+    ```
+
+3.  Requête : execQueryGetReservationOf  
+    Description : Optenir les réservations d'un client.  
+    Utilité :  Optenir les réservations d'un client.  
+    Constuction : Je recherche tous les clients, toutes les réservations, quelles réservations ont faits les clients, le nom des clients je filtre sur le nom rechrerché.  
+    Graph  
+    ```java
+    PREFIX db: <http://dbpedia.org/resource/>  
+	PREFIX onto: <http://dbpedia.org/ontology/>   
+	PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+	PREFIX ns: <http://www.semanticweb.org/Kevin/Mini-projet/Ressources/>
+	select distinct ?reservation where {
+		?customer rdf:type ns:Customer . 
+		?reservation rdf:type ns:Reservation . 
+	    ?customer ns:has_made ?reservation .
+		?customer ns:name ?name . 
+	FILTER(?name = "Marc")
+	};
+    ```
+    Resulats attendus : 
+    ```java 
+    http://www.semanticweb.org/Kevin/Mini-projet/Ressources/reservation2
+    ```
+
+    4.  Requête : execQueryGetRestaurantMenuAndDishPrice  
+    Description : Optenir les prix des plats et menus d'un restaurant.  
+    Utilité :  Optenir les prix des plats et menus d'un restaurant.  
+    Constuction : Je recherche tous les restaurants, toutes les plats et menus offerts, le nom des restaurants, le noms et le prix des plats et menus, et je filtre sur le nom du restaurant recherché. C'est peut être pas optimal mais ça marche.   
+    Graph  
+    ```java
+    PREFIX db: <http://dbpedia.org/resource/>  
+	PREFIX onto: <http://dbpedia.org/ontology/>   
+	PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+	PREFIX ns: <http://www.semanticweb.org/Kevin/Mini-projet/Ressources/>
+	select distinct ?dishAndMenuName ?price where { 
+	    ?restaurant rdf:type ns:Restaurant . 
+	    ?restaurant ns:offers ?dishAndMenu . 
+		?restaurant ns:name ?name . 
+		?dishAndMenu ns:name ?dishAndMenuName . 
+		?dishAndMenu ns:price ?price . 
+	FILTER(?name = "Le Cygne")
+    };
+    ```
+    Resulats attendus : 
+    ```java 
+    "Dish1" "22.0"^^<http://www.w3.org/2001/XMLSchema#decimal>
+    "Dish2" "18.0"^^<http://www.w3.org/2001/XMLSchema#decimal>
+    "Dish3" "13.0"^^<http://www.w3.org/2001/XMLSchema#decimal>
+    "Menu1" "35.0"^^<http://www.w3.org/2001/XMLSchema#decimal>
+    "Menu2" "20.0"^^<http://www.w3.org/2001/XMLSchema#decimal>
+    ```
+
+    5.  Requête : execQueryGetEditedAndNonEditedBills  
+    Description : Optenir les factures et si éditées le manager associé.  
+    Utilité :  Optenir les factures et si éditées le manager associé.  
+    Constuction : Je recherche toutes les factures et je fais un optional sur le manager.   
+    Graph  
+    ```java
+    PREFIX db: <http://dbpedia.org/resource/>  
+	PREFIX onto: <http://dbpedia.org/ontology/>   
+	PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+	PREFIX ns: <http://www.semanticweb.org/Kevin/Mini-projet/Ressources/>
+    select distinct ?bill ?manager where {
+        ?bill rdf:type ns:Bill_of_sale . 						
+	OPTIONAL {
+	    ?manager ns:has_edited ?bill .
+	}
+    };
+    ```
+    Resulats attendus : 
+    ```java 
+    http://www.semanticweb.org/Kevin/Mini-projet/Ressources/bill1 null
+    http://www.semanticweb.org/Kevin/Mini-projet/Ressources/bill2 http://www.semanticweb.org/Kevin/Mini-projet/Ressources/philippe
+    ```
+
+    6.  Requête : execQueryGetBillsWithMenuOrDishes  
+    Description : Optenir les factures qui contiennent des menus ou des plats.  
+    Utilité :  Optenir les factures qui contiennent des menus ou des plats.  
+    Constuction : Je recherche tous les plats et les factures associées UNION je recherche tous les menus et les factures associées.  
+    ```java
+    PREFIX db: <http://dbpedia.org/resource/>  
+	PREFIX onto: <http://dbpedia.org/ontology/>   
+	PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+	PREFIX ns: <http://www.semanticweb.org/Kevin/Mini-projet/Ressources/>
+	select  distinct ?bill where { 
+		{   
+            ?dish rdf:type ns:Dish .
+		    ?bill ns:includes ?dish 
+        }							
+		UNION 
+		{ 
+            ?menu rdf:type ns:Menu .
+		    ?bill ns:includes ?menu 
+        } 
+    };
+    ```
+    Resulats attendus : 
+    ```java 
+    http://www.semanticweb.org/Kevin/Mini-projet/Ressources/bill1
+    http://www.semanticweb.org/Kevin/Mini-projet/Ressources/bill2
+    ```
