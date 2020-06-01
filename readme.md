@@ -7,7 +7,7 @@ Le modèle est volontairement simplifié, mais pas trop afin de respecter les co
 ![](./graphs/schema.jpg)
 
 ### Classes : description avec les attibuts associés
-* Restaurant : Un restaurant avec un nom, un numéro de téléphone et une numéro de patente. Il tient un inventaire et a des employées.
+* Restaurant : Un restaurant. Il a un nom, un numéro de téléphone et des employées.
 * dbo:Person : Une personne avec un nom. Non instanciée, utilisée pour l'héritage.
 * Employee : Un employé avec un salaire. Il travaille pour un restaurant et fait des réservations. Non instancié.
 * Cook : Un cusinier. Il commande les commandes les produits et prépare les plats.
@@ -307,8 +307,8 @@ Comme la majorité des sites n'implémentent pas de RDFa (mais à ce que je vois
 ### Sources 
 > Cours SEO chapitre 2 Search Engine Optimisation : CAS-IPL - HRS
 ## Conclusion : en toute franchise
-Sujet très intéressant, j'ai compris un peu (du moins je crois) du web des *choses* semantiquement liées (et pas des "objets" vu comme entités physiques comme semble le dépeindre la traduction française). Au début, j'ai trouvé très instructif de pouvoir mettre en pratique et de manière concrète la théorie vue en cours. 
+Sujet très intéressant! J'ai compris un peu, à la dure parfois, ce qu'est ce web des *choses* semantiquement liées (et pas des "objets" vu comme entités physiques comme semble le dépeindre la traduction française). 
+
+Concernant ce mini-projet j'ai trouvé, au début, très instructif de pouvoir mettre en pratique et de manière concrète la théorie vue en cours. Au début ... car cela est devenu par la suite un peu indigeste. Indigeste par le fait de devoir répéter chaques étapes de multiples fois. Je trouve cela dommage, car plutôt que de faire **1-2** fois les choses proprements, à fond et avec plaisir, j'ai fini par les faire **3-10** fois avec l'amer sentiment que plus j'avancais moins c'était intéressant. La répétition ennuyeuse des tâches, j'ai plus de 45 heures par semaine de travail "officiel" pour la pratiquer ... et c'est payé :) 
     
-Au début ... car cela m'est devenu par la suite un peu indigeste. Indigeste le fait de devoir répéter chaques étapes de multiples fois. Je trouve cela dommage, car plutôt que de faire **1-2** fois les choses proprements et avec plaisir, j'ai fini par les faire **5-10** fois, à la longue de manière un peu baclée et avec le triste sentiment que plus j'avancais moins c'était intéressant. Pour la répétition de tâches ennuyeuses, j'ai plus de 45 heures par semaine de travail "officiel" pour la pratiquer ... et c'est payé! 
-    
-Après plus de 30 heures passées sur ce travail (pour un petit 30% de la note), je crois que je peux sincérement dire que j'en ai assez.
+Après plus de 30 heures passées sur ce travail (pour un tout petit 30% de la note), je crois que je peux sincérement dire que j'en ai assez.
