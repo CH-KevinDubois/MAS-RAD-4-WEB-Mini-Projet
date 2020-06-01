@@ -1,10 +1,12 @@
 # Rapport de travail
 ## RDFs : description du modèle
-### Intro
+### Intro : quelques mots sur mon modèle
 Le modèle tente de décrire simplement les interactions, les actions et les acteurs présents dans un restaurant. 
 Le modèle est volontairement simplifié, mais pas trop afin de respecter les contraintes posées par les données mini-projet. Pour décire en deux mots le modèle : l'acteur principal est le restaurant qui possède des employés et qui est visité par des clients. Les employés servent les clients, émettent les factures, cuisinent les plats, ... . Alors que les clients choisissent des plats proposés dans la carte et peuvent donner des notes en fin de repas.  
-image du schéma. 
-### Classes
+
+![](./graphs/schema.jpg)
+
+### Classes : description avec les attibuts associés
 * Restaurant : Un restaurant avec un nom, un numéro de téléphone et une numéro de patente. Il tient un inventaire et a des employées.
 * dbo:Person : Une personne avec un nom. Non instanciée, utilisée pour l'héritage.
 * Employee : Un employé avec un salaire. Il travaille pour un restaurant et fait des réservations. Non instancié.
@@ -18,7 +20,7 @@ image du schéma.
 * Bill_of_sale : Une facture avec un pourboire. Elle est le total de l'addition des plats et des menus.
 * Menu : Un menu avec un prix et un nom. Il contient des plats.
 * Dish : Un plat avec un prix et un nom. Il est constitué de produits.
-### Object properties
+### Object properties : liste complète avec Domain et Range
 * offers :
     * RDFS:domain => Restaurant
     * RDFS:Range => Dish
@@ -76,17 +78,33 @@ image du schéma.
 * contains :
     * RDFS:domain => Menu
     * RDFS:Range => Dish
-### Inférences
+### Inférences : deux idées
 Une première idée est d'inférer la somme totale de la facture connaissant le prix ainsi que la quantité de menus et des plats commandés. 
 Une seconde idée, comme nous avons les liens entre tous les acteurs d'un restaurant, est de mettre en relation le classement donné par client, l'équipe en charge de la table, ainsi que le pourboire laissé avec la facture. Selon une certaine pondération du classement et du pourboire, il est possible d'évaluer la performance de l'ensemble des employés, et par inférence de leur ajouter une propriété qui est la moyenne des notes reçues dans le passé.
 ## RDF : instanciation du modèle
-Les graphs
+
+La totalité des individus déclarés se retrouvent dans les graphiques suivants :  
+
+![](./graphs/bill.jpg)
+
+![](./graphs/customer.jpg)
+
+![](./graphs/dishMenu.jpg)
+
+![](./graphs/employee.jpg)
+
+![](./graphs/rank.jpg)
+
+![](./graphs/reservation.jpg)
+
+![](./graphs/restaurant.jpg)
 ## Requêtes SPARQL
 1.  Requête : execQueryGetEmployees  
     Description : trouver tous les employés.  
     Utilité : trouver tous les employés.  
     Constuction : Je recherche toutes les subclasses de Employee et ensuite toutes les instances des ces subclasses (fait comme ceci car pas de reasoner).  
-    Graph  
+    Graph :  
+    ![](./graphs/sparql1.jpg)
     ```java
     PREFIX db: <http://dbpedia.org/resource/>  
 	PREFIX onto: <http://dbpedia.org/ontology/>   
@@ -109,7 +127,8 @@ Les graphs
     Description : Optenir les 2 prix les plus élevés des plats.  
     Utilité :  Optenir les deux prix les plus élevés.  
     Constuction : Je recherche les plats, les prix associés, j'ordonne de façon DESC et je limite à deux résultats.  
-    Graph  
+    Graph :  
+    ![](./graphs/sparql2.jpg) 
     ```java
     PREFIX db: <http://dbpedia.org/resource/>  
 	PREFIX onto: <http://dbpedia.org/ontology/>   
@@ -134,7 +153,8 @@ Les graphs
     Description : Optenir les réservations d'un client.  
     Utilité :  Optenir les réservations d'un client.  
     Constuction : Je recherche tous les clients, toutes les réservations, quelles réservations ont faits les clients, le nom des clients je filtre sur le nom rechrerché.  
-    Graph  
+    Graph :  
+    ![](./graphs/sparql3.jpg) 
     ```java
     PREFIX db: <http://dbpedia.org/resource/>  
 	PREFIX onto: <http://dbpedia.org/ontology/>   
@@ -154,24 +174,25 @@ Les graphs
     http://www.semanticweb.org/Kevin/Mini-projet/Ressources/reservation2
     ```
 
-    4.  Requête : execQueryGetRestaurantMenuAndDishPrice  
+4.  Requête :  execQueryGetRestaurantMenuAndDishPrice  
     Description : Optenir les prix des plats et menus d'un restaurant.  
     Utilité :  Optenir les prix des plats et menus d'un restaurant.  
     Constuction : Je recherche tous les restaurants, toutes les plats et menus offerts, le nom des restaurants, le noms et le prix des plats et menus, et je filtre sur le nom du restaurant recherché. C'est peut être pas optimal mais ça marche.   
-    Graph  
+    Graph :  
+    ![](./graphs/sparql4.jpg)
     ```java
     PREFIX db: <http://dbpedia.org/resource/>  
-	PREFIX onto: <http://dbpedia.org/ontology/>   
-	PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-	PREFIX ns: <http://www.semanticweb.org/Kevin/Mini-projet/Ressources/>
-	select distinct ?dishAndMenuName ?price where { 
-	    ?restaurant rdf:type ns:Restaurant . 
-	    ?restaurant ns:offers ?dishAndMenu . 
-		?restaurant ns:name ?name . 
-		?dishAndMenu ns:name ?dishAndMenuName . 
-		?dishAndMenu ns:price ?price . 
-	FILTER(?name = "Le Cygne")
+    PREFIX onto: <http://dbpedia.org/ontology/>   
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+    PREFIX ns: <http://www.semanticweb.org/Kevin/Mini-projet/Ressources/>
+    select distinct ?dishAndMenuName ?price where { 
+        ?restaurant rdf:type ns:Restaurant . 
+        ?restaurant ns:offers ?dishAndMenu . 
+        ?restaurant ns:name ?name . 
+        ?dishAndMenu ns:name ?dishAndMenuName . 
+        ?dishAndMenu ns:price ?price . 
+    FILTER(?name = "Le Cygne")
     };
     ```
     Resulats attendus : 
@@ -183,49 +204,52 @@ Les graphs
     "Menu2" "20.0"^^<http://www.w3.org/2001/XMLSchema#decimal>
     ```
 
-    5.  Requête : execQueryGetEditedAndNonEditedBills  
+5.  Requête : execQueryGetEditedAndNonEditedBills  
     Description : Optenir les factures et si éditées le manager associé.  
     Utilité :  Optenir les factures et si éditées le manager associé.  
     Constuction : Je recherche toutes les factures et je fais un optional sur le manager.   
-    Graph  
+    Graph :  
+    ![](./graphs/sparql5.jpg)  
     ```java
     PREFIX db: <http://dbpedia.org/resource/>  
-	PREFIX onto: <http://dbpedia.org/ontology/>   
-	PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-	PREFIX ns: <http://www.semanticweb.org/Kevin/Mini-projet/Ressources/>
+    PREFIX onto: <http://dbpedia.org/ontology/>   
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+    PREFIX ns: <http://www.semanticweb.org/Kevin/Mini-projet/Ressources/>
     select distinct ?bill ?manager where {
         ?bill rdf:type ns:Bill_of_sale . 						
-	OPTIONAL {
-	    ?manager ns:has_edited ?bill .
-	}
+    OPTIONAL {
+            ?manager ns:has_edited ?bill .
+        }
     };
-    ```
+    ```   
     Resulats attendus : 
     ```java 
     http://www.semanticweb.org/Kevin/Mini-projet/Ressources/bill1 null
     http://www.semanticweb.org/Kevin/Mini-projet/Ressources/bill2 http://www.semanticweb.org/Kevin/Mini-projet/Ressources/philippe
     ```
 
-    6.  Requête : execQueryGetBillsWithMenuOrDishes  
+6.  Requête : execQueryGetBillsWithMenuOrDishes  
     Description : Optenir les factures qui contiennent des menus ou des plats.  
     Utilité :  Optenir les factures qui contiennent des menus ou des plats.  
     Constuction : Je recherche tous les plats et les factures associées UNION je recherche tous les menus et les factures associées.  
+    Graph :  
+    ![](./graphs/sparql6.jpg)
     ```java
     PREFIX db: <http://dbpedia.org/resource/>  
-	PREFIX onto: <http://dbpedia.org/ontology/>   
-	PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-	PREFIX ns: <http://www.semanticweb.org/Kevin/Mini-projet/Ressources/>
-	select  distinct ?bill where { 
-		{   
+    PREFIX onto: <http://dbpedia.org/ontology/>   
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+    PREFIX ns: <http://www.semanticweb.org/Kevin/Mini-projet/Ressources/>
+    select  distinct ?bill where { 
+        {   
             ?dish rdf:type ns:Dish .
-		    ?bill ns:includes ?dish 
+            ?bill ns:includes ?dish 
         }							
-		UNION 
-		{ 
+        UNION 
+        { 
             ?menu rdf:type ns:Menu .
-		    ?bill ns:includes ?menu 
+            ?bill ns:includes ?menu 
         } 
     };
     ```
@@ -234,3 +258,57 @@ Les graphs
     http://www.semanticweb.org/Kevin/Mini-projet/Ressources/bill1
     http://www.semanticweb.org/Kevin/Mini-projet/Ressources/bill2
     ```
+
+## Analyse et compréhension RDFa
+### Remarques 
+Comme la majorité des sites n'implémentent pas de RDFa (mais à ce que je vois soit du micordata ou du JSON LD) et que l'on peut se permettre d'être agile, alors j'ai analysés des sites avec du microdata. Pourquoi? Parce que l'on peut simplement changer la balise *itemtype* par *typeof* et *itemprop* par *property* et le microdata se transforme en RDFa. C'est strictement identique et ça ne porte pas atteinte aux concepts sousjacents. 
+### Sites analysés
+1. SWISSMILK  
+    Page étudiée : https://www.swissmilk.ch/fr/recettes-idees/recettes/SM2020_DIVE_33/dalgona-coffee/?collection=120107&index=0  
+    Schéma présents :
+    - schema:Recipe : permet la description de la recette (auteur, ingédients, image, ...)
+    - schema:HowToStep : permet de donner les étapes de la recette
+
+    ![](./graphs/ana1.jpg)
+    
+2. Stackoverflow 
+    Page étudiée : https://stackoverflow.com/questions/42273849/how-do-i-create-forms-involving-several-entities-in-flask  
+    Schéma présents :
+    - https://schema.org/QAPage : permet de signifier que c'est une page de question-réponses, ansi que le nom et la description sommaire.
+    -  	https://schema.org/Question : permet de faire apparaitre la description de la question en détail (date création, date modification, auteur, la réponse acceptée, ...).
+    -  	https://schema.org/Answer : permet de faire apparaitre les réponses données à la question (date création, auteur, ... ).  
+
+    ![](./graphs/ana2.jpg)
+
+3. Trivago
+    Page étudiée : https://www.trivago.ch/?aDateRange%5Barr%5D=2020-06-11&aDateRange%5Bdep%5D=2020-06-12&aPriceRange%5Bfrom%5D=0&aPriceRange%5Bto%5D=0&iRoomType=7&aRooms%5B0%5D%5Badults%5D=2&cpt2=14555%2F100&hasList=1&hasMap=0&bIsSeoPage=0&sortingId=1&slideoutsPageItemId=&iGeoDistanceLimit=20000&address=&addressGeoCode=&offset=0&ra=&overlayMode=  
+    schéma présents :
+    -  	https://schema.org/Hotel : permet de faire la description d'un hotel (:image 	:name :starRating :aggregateRating :makesOffer). 
+    - https://schema.org/Rating : permet d'afficher le nombre d'étoile données à l'hotel (:ratingValue) 
+    - https://schema.org/AggregateRating : permet d'afficher les notes données par les utilisateurs (:worstRating: ratingCount :bestRating :ratingValue )
+
+    ![](./graphs/ana3.jpg) 
+### Indexation des pages par Google
+1. Le Crawling
+2. L’Indexation
+3. Le ranking
+    - Le tri par pertinence.
+    - Le tri par popularité
+    - Le tri par mesure du comportement utilisateur
+    - Le tri par calcule dynamique de catégorie ou clustering.
+
+### Affichage à l'utilisateur
+1. L’utilisateur entre le mot-clé.
+2. Google crée son index dans lequel il regroupe les pages web parcourues et évaluées par ses robots d’indexation
+3. Google extrait de cet index les pages qu’il estime répondre le mieux au mot-clé saisi par l’utilisateur lors de la requête.
+4. Google calcule et classe les résultats par pertinence, selon son algorithme.
+5. Google affiche les résultats.
+
+### Sources 
+> Cours SEO chapitre 2 Search Engine Optimisation : CAS-IPL - HRS
+## Conclusion : en toute franchise
+Travail très intéressant, j'ai compris une partie (du moins je crois) du web des *choses* semantiquement liées (et pas des "objets" (vu comme entités physiques) comme semble le dépeindre la traduction française). Au début, j'ai trouvé très instructif de pouvoir mettre en pratique et de manière concrète la théorie vue en cours. 
+    
+Au début ... car cela m'est devenu par la suite prèsque indigeste. Indigeste le fait de devoir répéter chaques itérations encore et encore. Je trouve cela dommage, car plutôt que de faire **1-2** fois les choses proprements et avec plaisir, j'ai fini par les faire **10** fois, de manière un peu baclée et avec le triste sentiment que plus j'avancais moins c'était intéressant. Comme je l'ai dit à certains de mes collègues, pour la répétition de tâches ennuyeuses, j'ai plus de 45 heures par semaine de travail "officiel" pour le pratiquer ... et c'est payé! 
+    
+Après plus de 30 heures passées sur ce travail (pour un petit 30% de la note), je crois que je peux sincérement dire que j'en ai assez.
