@@ -306,9 +306,9 @@ Comme la majorité des sites n'implémentent pas de RDFa (mais à ce que je vois
 
 ### Sources 
 > Cours SEO chapitre 2 Search Engine Optimisation : CAS-IPL - HRS
-## Conclusion : en toute franchise
-Sujet très intéressant! J'ai compris un peu, à la dure parfois, ce qu'est ce web des *choses* semantiquement liées (et pas des "objets" vu comme entités physiques comme semble le dépeindre la traduction française). 
+## Conclusion
+Sujet très intéressant! J'ai eu au travers du cours et de ce mini-projet, souvent à la dure, un aperçu du web 3.0, ce web des *choses* semantiquement liées (et non comme je le pensais, d'objets en tant qu'entités physiques comme semble le connoter la traduction française). 
 
-Concernant ce mini-projet j'ai trouvé, au début, très instructif de pouvoir mettre en pratique et de manière concrète la théorie vue en cours. Au début ... car cela est devenu par la suite un peu indigeste. Indigeste par le fait de devoir répéter chaques étapes de multiples fois. Je trouve cela dommage, car plutôt que de faire **1-2** fois les choses proprements, à fond et avec plaisir, j'ai fini par les faire **3-10** fois avec l'amer sentiment que plus j'avancais moins c'était intéressant. La répétition ennuyeuse des tâches, j'ai plus de 45 heures par semaine de travail "officiel" pour la pratiquer ... et c'est payé :) 
+Concernant ce mini-projet, j'ai trouvé, au début, très instructif de pouvoir mettre en pratique de manière très concrète la théorie vue en cours. Au début ... car cela est devenu en toute franchise un peu indigeste sur la longueur. Indigeste, par ma part, de devoir répéter des étapes similaires de multiples fois. Je trouve cela dommage, car plutôt que de faire une seule fois les choses proprements, à fond et avec plaisir, j'ai fini par les faire à la va vite et avec l'amer sentiment que plus j'avancais moins cela ne m'intéressait. 
     
-Après plus de 30 heures passées sur ce travail (pour un tout petit 30% de la note), je crois que je peux sincérement dire que j'en ai assez.
+La durée du travail est, elle aussi, peut être un peu sous estimée. Prévu pour une douzaine d'heures (si l'on se base sur un ratio 50-50), j'ai passé plus de 25 heures sur ce travail (au détriment du second cours, qui lui aussi avance à très grands pas). Toutes ces heures pour un petit 30% de la note finale, c'est peut être aussi un peu rude!
