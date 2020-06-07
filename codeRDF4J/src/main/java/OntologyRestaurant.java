@@ -620,6 +620,8 @@ static void execQueryGetBillsWithMenuOrDishes(Repository rep) {
 			buildOntology(rep);
 			createIndividuals(rep);
 			linkIndividuals(rep);
+			
+			//Décommenter ici pour afficher les autres résultats de requêtes
 //			execQueryGetEmployees(rep);
 //			execQueryGetHigherDishPrice(rep, 2);
 //			execQueryGetReservationOf(rep, "Marc");
