@@ -295,15 +295,17 @@ La totalité des individus déclarés se retrouvent dans les graphiques suivants
 Comme la majorité des sites n'implémentent pas de RDFa (mais à ce que je vois soit du micordata ou du JSON LD) et que l'on peut se permettre d'être agile, alors j'ai analysés des sites avec du microdata. Pourquoi? Parce que l'on peut simplement changer la balise *itemtype* par *typeof* et *itemprop* par *property* et le microdata se transforme en RDFa. C'est strictement identique et ça ne porte pas atteinte aux concepts sousjacents. 
 ### Sites analysés
 1. SWISSMILK  
-    Page étudiée : https://www.swissmilk.ch/fr/recettes-idees/recettes/SM2020_DIVE_33/dalgona-coffee/?collection=120107&index=0  
+    Page étudiée : https://www.swissmilk.ch/fr/recettes-idees/recettes/SM2020_DIVE_33/dalgona-coffee/?collection=120107&index=0 
+
     Schéma présents :
-    - schema:Recipe : permet la description de la recette (auteur, ingédients, image, ...)
-    - schema:HowToStep : permet de donner les étapes de la recette
+    - schema:Recipe : permet la description de la recette (auteur, ingédients, image, ...).
+    - schema:HowToStep : permet de donner les étapes de la recette.
 
     ![](./graphs/ana1.jpg)
     
 2. Stackoverflow 
     Page étudiée : https://stackoverflow.com/questions/42273849/how-do-i-create-forms-involving-several-entities-in-flask  
+
     Schéma présents :
     - https://schema.org/QAPage : permet de signifier que c'est une page de question-réponses, ansi que le nom et la description sommaire.
     -  	https://schema.org/Question : permet de faire apparaitre la description de la question en détail (date création, date modification, auteur, la réponse acceptée, ...).
@@ -313,10 +315,11 @@ Comme la majorité des sites n'implémentent pas de RDFa (mais à ce que je vois
 
 3. Trivago
     Page étudiée : https://www.trivago.ch/?aDateRange%5Barr%5D=2020-06-11&aDateRange%5Bdep%5D=2020-06-12&aPriceRange%5Bfrom%5D=0&aPriceRange%5Bto%5D=0&iRoomType=7&aRooms%5B0%5D%5Badults%5D=2&cpt2=14555%2F100&hasList=1&hasMap=0&bIsSeoPage=0&sortingId=1&slideoutsPageItemId=&iGeoDistanceLimit=20000&address=&addressGeoCode=&offset=0&ra=&overlayMode=  
+
     schéma présents :
     -  	https://schema.org/Hotel : permet de faire la description d'un hotel (:image 	:name :starRating :aggregateRating :makesOffer). 
-    - https://schema.org/Rating : permet d'afficher le nombre d'étoile données à l'hotel (:ratingValue) 
-    - https://schema.org/AggregateRating : permet d'afficher les notes données par les utilisateurs (:worstRating: ratingCount :bestRating :ratingValue )
+    - https://schema.org/Rating : permet d'afficher le nombre d'étoile données à l'hotel (:ratingValue). 
+    - https://schema.org/AggregateRating : permet d'afficher les notes données par les utilisateurs (:worstRating: ratingCount :bestRating :ratingValue).
 
     ![](./graphs/ana3.jpg) 
 ### Indexation des pages par Google
