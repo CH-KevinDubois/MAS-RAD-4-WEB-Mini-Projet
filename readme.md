@@ -1,5 +1,36 @@
-# Rapport de travail
-## RDFs : description du modèle
+<link rel="stylesheet" type="text/css" media="all" href="./css/mdstyle.css" />
+
+# Rapport Mini-Projet
+
+## MAS-RAD 4 : Introduction au Web des données
+
+## Kevin Dubois
+
+## Travail rendu le 07/06/2020
+
+### Lien GitHub : [https://github.com/CH-KevinDubois/MAS-RAD-4-WEB-Mini-Projet](https://github.com/CH-KevinDubois/MAS-RAD-4-WEB-Mini-Projet)
+
+<div style="page-break-after: always;"></div>
+
+## Table des matières
+  * [RDFs : Description du modèle](#rdfs-:-description-du-modèle)
+    + [Intro : quelques mots sur mon modèle](#intro-:-quelques-mots-sur-mon-modèle)
+    + [Classes : description avec les attibuts associés](#classes-:-description-avec-les-attibuts-associés)
+    + [Object properties : liste complète avec Domain et Range](#object-properties-:-liste-complète-avec-domain-et-range)
+    + [Inférences : deux idées](#inférences-:-deux-idées)
+  * [RDF : instanciation du modèle](#rdf-:-instanciation-du-modèle)
+  * [Requêtes SPARQL](#requêtes-sparql)
+  * [Analyse et compréhension RDFa](#analyse-et-compréhension-rdfa)
+    + [Remarques](#remarques)
+    + [Sites analysés](#sites-analysés)
+    + [Indexation des pages par Google](#indexation-des-pages-par-google)
+    + [Affichage à l'utilisateur](#affichage-à-l'utilisateur)
+    + [Sources](#sources)
+  * [Conclusions](#conclusions)
+
+<div style="page-break-after: always;"></div>
+
+## RDFs : Description du modèle
 ### Intro : quelques mots sur mon modèle
 Le modèle tente de décrire simplement les interactions, les actions et les acteurs présents dans un restaurant. 
 Le modèle est volontairement simplifié, mais pas trop afin de respecter les contraintes posées par les données mini-projet. Pour décire en deux mots le modèle : l'acteur principal est le restaurant qui possède des employés et qui est visité par des clients. Les employés servent les clients, émettent les factures, cuisinent les plats, ... . Alors que les clients choisissent des plats proposés dans la carte et peuvent donner des notes en fin de repas.  
@@ -100,8 +131,8 @@ La totalité des individus déclarés se retrouvent dans les graphiques suivants
 ![](./graphs/restaurant.jpg)
 ## Requêtes SPARQL
 1.  Requête : execQueryGetEmployees  
-    Description : trouver tous les employés.  
-    Utilité : trouver tous les employés.  
+    Description : Trouver tous les employés.  
+    Utilité : Trouver tous les employés.  
     Constuction : Je recherche toutes les subclasses de Employee et ensuite toutes les instances des ces subclasses (fait comme ceci car pas de reasoner).  
     Graph :  
     ![](./graphs/sparql1.jpg)
@@ -306,9 +337,9 @@ Comme la majorité des sites n'implémentent pas de RDFa (mais à ce que je vois
 
 ### Sources 
 > Cours SEO chapitre 2 Search Engine Optimisation : CAS-IPL - HRS
-## Conclusion
-Sujet très intéressant! J'ai eu au travers du cours et de ce mini-projet, souvent à la dure, un aperçu du web 3.0, ce web des *choses* semantiquement liées (et non comme je le pensais, d'objets en tant qu'entités physiques comme semble le connoter la traduction française). 
+## Conclusions
+Sujet très intéressant! J'ai eu au travers du cours puis de ce mini-projet, souvent à la dure, un aperçu du web 3.0. Ce web de ces *choses* semantiquement liées. 
 
-Concernant ce mini-projet, j'ai trouvé, au début, très instructif de pouvoir mettre en pratique de manière très concrète la théorie vue en cours. Au début ... car cela est devenu en toute franchise un peu indigeste sur la longueur. Indigeste, par ma part, de devoir répéter des étapes similaires de multiples fois. Je trouve cela dommage, car plutôt que de faire une seule fois les choses proprements, à fond et avec plaisir, j'ai fini par les faire à la va vite et avec l'amer sentiment que plus j'avancais moins cela ne m'intéressait. 
+Concernant ce mini-projet, j'ai trouvé, au début, très instructif de pouvoir mettre en pratique de manière très concrète la théorie vue en cours. Au début ... car cela est devenu en toute franchise un peu indigeste sur la longueur. Indigeste, pour ma part, de devoir répéter des étapes similaires de multiples fois. Je trouve cela dommage, car plutôt que de faire une seule fois les choses proprements, à fond et avec plaisir, j'ai fini par les faire le plus rapidement possible et avec l'amer sentiment que plus j'avancais moins cela ne m'intéressait. 
     
-La durée du travail est, elle aussi, peut être un peu sous estimée. Prévu pour une douzaine d'heures (si l'on se base sur un ratio 50-50), j'ai passé plus de 25 heures sur ce travail (au détriment du second cours, qui lui aussi avance à très grands pas). Toutes ces heures pour un petit 30% de la note finale, c'est peut être aussi un peu rude!
+La durée du travail est, elle aussi, peut être un peu sous estimée. Prévu pour une douzaine d'heures (si l'on se base sur un ratio 50-50), j'ai passé plus de 25 heures sur ce travail (au détriment du second cours, qui lui aussi avance à très grands pas). Toutes ces heures pour un petit 30% de la note finale, c'est peut être aussi un peu mal équilibré!
